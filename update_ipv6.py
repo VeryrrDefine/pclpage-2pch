@@ -94,6 +94,38 @@ def write_current_ipv6(addr):
         return False
     return True
 
+def write_ipv6_information(addr):
+    """将新地址写入PCL主页"""
+    filepath = os.path.join(WORK_DIR, "Custom.xaml")
+    try:
+        content = ""
+        with open(filepath, 'r') as f:
+            content = f.read()
+        
+        start = content.index("<!-- IPv6 change start -->")
+        end = content.index("<!-- IPv6 change end -->")
+        #截取start到end之间的内容
+        sliced_original = content[start:end]
+
+        sliced_changed = f"""<!-- IPv6 change start -->
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#000000"
+            Text="    {addr}" />
+
+        <local:MyButton Width="300" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+	        Text="启动游戏(版本名SecondaryPCH)" EventType="启动游戏"  EventData="SecondaryPCH|{addr}" />
+        """
+        content = content.replace(sliced_original, sliced_changed)
+        with open(filepath, "w") as f:
+            f.write(content)
+        # with open(filepath, 'r') as f:
+        #     f.write(addr + '\n')
+        log_info(f"已写入新地址至Custom.xaml: {addr}")
+    except Exception as e:
+        log_error(f"写入 Custom.xaml 失败: {e}")
+        return False
+    return True
+    
+
 def compare_prefix(addr1, addr2):
     """比较两个 IPv6 地址的 /64 前缀是否相同"""
     if not addr1 or not addr2:
@@ -155,6 +187,8 @@ def main():
     if not write_current_ipv6(current_addr):
         sys.exit(1)
 
+    if not write_ipv6_information(current_addr):
+        sys.exit(1)
     # ===== TODO: 在此处添加修改其他文件的逻辑 =====
     # 例如：修改某个配置文件
     # with open('some_file', 'w') as f:
@@ -162,7 +196,7 @@ def main():
     # ============================================
 
     if current_addr.startswith("240e:3b4:381b:4a50"):
-        print("本地测试，拉了")
+        log_error("本地测试，拉了")
         sys.exit(1)
     # 4.5 先pull
     if not run_git_command(['git', 'pull']):

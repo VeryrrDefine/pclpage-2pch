@@ -161,7 +161,7 @@ def main():
     #     f.write(...)
     # ============================================
 
-    if current_addr.startswith("240e:3b4:38ab:4a50"):
+    if current_addr.startswith("240e:3b4:381b:4a50"):
         print("本地测试，拉了")
         sys.exit(1)
     # 4.5 先pull

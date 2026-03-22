@@ -40,7 +40,7 @@ def get_global_ipv6():
         # 执行 ip -6 addr show，捕获输出
         result = subprocess.run(
             # enp1s0
-            ['ip', '-6', 'addr', 'show', 'ens37'],
+            ['ip', '-6', 'addr', 'show', 'enp1s0'],
             capture_output=True,
             text=True,
             check=True

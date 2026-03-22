@@ -24,10 +24,10 @@
             Text="1. 服务器IP地址" />
         <!-- IPv6 change start -->
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#000000"
-            Text="    240e:3b4:381b:4a50:a26c:97e7:5b69:72b2" />
+            Text="    2408:822e:1ea0:27c1::ced" />
 
         <local:MyButton Width="300" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
-	        Text="启动游戏(版本名SecondaryPCH)" EventType="启动游戏"  EventData="SecondaryPCH|240e:3b4:381b:4a50:a26c:97e7:5b69:72b2" />
+	        Text="启动游戏(版本名SecondaryPCH)" EventType="启动游戏"  EventData="SecondaryPCH|2408:822e:1ea0:27c1::ced" />
         <!-- IPv6 change end -->
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#000000"
             Text="2. 服主专门为这个IP地址写了python脚本喵~" />

@@ -182,6 +182,9 @@ def main():
         sys.exit(0)
 
     log_info("前缀发生变化，准备更新")
+    # 4.5 先pull
+    if not run_git_command(['git', 'pull']):
+        sys.exit(1)
 
     # 4. 写入新地址
     if not write_current_ipv6(current_addr):
@@ -197,9 +200,6 @@ def main():
 
     if current_addr.startswith("240e:3b4:381b:4a50"):
         log_error("本地测试，拉了")
-        sys.exit(1)
-    # 4.5 先pull
-    if not run_git_command(['git', 'pull']):
         sys.exit(1)
 
     # 5. Git 操作

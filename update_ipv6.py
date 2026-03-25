@@ -7,6 +7,7 @@ import sys
 import ipaddress
 import logging
 from datetime import datetime
+import requests
 
 # ===== 配置 =====
 WORK_DIR = os.getcwd()
@@ -17,7 +18,9 @@ else:
 IPV6_FILE = 'ipv6'
 LOG_FILE = 'update_ipv6.log'
 GIT_COMMIT_MSG = 'Update Address'
-
+token = os.getenv("dynv6token")
+if (token is None):
+    sys.exit(1)
 # ===== 日志设置 =====
 logging.basicConfig(
     filename=os.path.join(WORK_DIR, LOG_FILE),
@@ -93,6 +96,10 @@ def write_current_ipv6(addr):
         log_error(f"写入 {IPV6_FILE} 失败: {e}")
         return False
     return True
+
+def pushintodynv6(addr):
+    g = requests.get(f'https://dynv6.com/api/update?hostname=veryrrdefine.dns.army&token={token}&ipv6={addr}')
+    pass
 
 def write_ipv6_information(addr):
     """将新地址写入PCL主页"""
@@ -202,6 +209,11 @@ def main():
         log_error("本地测试，拉了")
         sys.exit(1)
 
+    log_ingo("Pushinto dynv6.com")
+
+    if not pushintodynv6(addr):
+        log_error("DYNv6 Failed")
+        sys.exit(1)
     # 5. Git 操作
     # 添加所有变更（也可指定具体文件）
     if not run_git_command(['git', 'add', '.']):
@@ -216,6 +228,7 @@ def main():
         sys.exit(1)
 
     log_info("更新完成并已推送到 GitHub")
+
 
 if __name__ == '__main__':
     main()

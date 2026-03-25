@@ -170,7 +170,6 @@ def main():
         log_error(f"无法切换到工作目录 {WORK_DIR}: {e}")
         sys.exit(1)
 
-    log_info("开始检查 IPv6 地址变更")
 
     # 1. 获取当前 IPv6
     current_addr = get_global_ipv6()
@@ -185,7 +184,6 @@ def main():
 
     # 3. 前缀比较
     if stored_addr and compare_prefix(current_addr, stored_addr):
-        log_info("前缀未变化，无需操作")
         sys.exit(0)
 
     log_info("前缀发生变化，准备更新")

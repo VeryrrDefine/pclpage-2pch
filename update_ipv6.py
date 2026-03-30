@@ -99,7 +99,7 @@ def write_current_ipv6(addr):
 
 def pushintodynv6(addr):
     g = requests.get(f'https://dynv6.com/api/update?hostname=veryrrdefine.dns.army&token={token}&ipv6={addr}')
-    pass
+    return True
 
 def write_ipv6_information(addr):
     """将新地址写入PCL主页"""

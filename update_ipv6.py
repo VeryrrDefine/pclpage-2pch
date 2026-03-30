@@ -207,7 +207,7 @@ def main():
         log_error("本地测试，拉了")
         sys.exit(1)
 
-    log_ingo("Pushinto dynv6.com")
+    log_info("Pushinto dynv6.com")
 
     if not pushintodynv6(addr):
         log_error("DYNv6 Failed")

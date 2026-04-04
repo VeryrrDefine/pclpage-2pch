@@ -98,7 +98,10 @@ def write_current_ipv6(addr):
     return True
 
 def pushintodynv6(addr):
-    g = requests.get(f'https://dynv6.com/api/update?hostname=veryrrdefine.dns.army&token={token}&ipv6={addr}')
+    try:
+        g = requests.get(f'https://dynv6.com/api/update?hostname=veryrrdefine.dns.army&token={token}&ipv6={addr}')
+    except:
+        return False
     return True
 
 def write_ipv6_information(addr):
@@ -147,6 +150,7 @@ def compare_prefix(addr1, addr2):
 
 def run_git_command(cmd):
     """执行 git 命令，工作目录为 WORK_DIR，返回成功与否"""
+    log_info(f"Trying to Execute: {' '.join(cmd)}")
     try:
         result = subprocess.run(
             cmd,
@@ -209,9 +213,8 @@ def main():
 
     log_info("Pushinto dynv6.com")
 
-    if not pushintodynv6(addr):
+    if not pushintodynv6(current_addr):
         log_error("DYNv6 Failed")
-        sys.exit(1)
     # 5. Git 操作
     # 添加所有变更（也可指定具体文件）
     if not run_git_command(['git', 'add', '.']):

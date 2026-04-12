@@ -28,10 +28,10 @@
             Text="    veryrrdefine.dns.army" />
         <!-- IPv6 change start -->
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#000000"
-            Text="    2408:822e:1ea2:af31:5054:ff:fefe:fb3f" />
+            Text="    2408:822e:1ea0:ff31:5054:ff:fefe:fb3f" />
 
         <local:MyButton Width="300" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
-	        Text="启动游戏(版本名SecondaryPCH)" EventType="启动游戏"  EventData="SecondaryPCH|2408:822e:1ea2:af31:5054:ff:fefe:fb3f" />
+	        Text="启动游戏(版本名SecondaryPCH)" EventType="启动游戏"  EventData="SecondaryPCH|2408:822e:1ea0:ff31:5054:ff:fefe:fb3f" />
         <!-- IPv6 change end -->
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#000000"
             Text="2. 服主专门为这个IP地址写了python脚本喵~" />

@@ -211,10 +211,6 @@ def main():
         log_error("本地测试，拉了")
         sys.exit(1)
 
-    log_info("Pushinto dynv6.com")
-
-    if not pushintodynv6(current_addr):
-        log_error("DYNv6 Failed")
     # 5. Git 操作
     # 添加所有变更（也可指定具体文件）
     if not run_git_command(['git', 'add', '.']):
@@ -229,6 +225,10 @@ def main():
         sys.exit(1)
 
     log_info("更新完成并已推送到 GitHub")
+    log_info("Pushinto dynv6.com")
+
+    if not pushintodynv6(current_addr):
+        log_error("DYNv6 Failed")
 
 
 if __name__ == '__main__':

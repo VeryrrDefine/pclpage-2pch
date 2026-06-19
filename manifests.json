@@ -1,0 +1,18 @@
+[
+  {
+    "version_id": "1",
+    "version_name": "FirstUpdate",
+    "version_order": 1,
+    "instructions": [
+      {
+        "type": "del_file",
+        "goal": "./b.html"
+      },
+      {
+        "type": "add_file",
+        "file_source": "https://veryrrd.googology.top/Custom.xaml",
+        "destination": "./Custom.xaml"
+      }
+    ]
+  }
+]

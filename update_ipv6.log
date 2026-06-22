@@ -273,3 +273,23 @@
 2026-06-22 11:27:05 - INFO - 已写入新地址: 2408:822e:1ea0:ac01:5054:ff:fefe:fb3f
 2026-06-22 11:27:05 - INFO - 已写入新地址至Custom.xaml: 2408:822e:1ea0:ac01:5054:ff:fefe:fb3f
 2026-06-22 11:27:05 - INFO - Trying to Execute: git add .
+2026-06-22 11:27:05 - INFO - 成功执行: git add .
+2026-06-22 11:27:05 - INFO - Trying to Execute: git commit -m Update Address
+2026-06-22 11:27:05 - INFO - 成功执行: git commit -m Update Address
+2026-06-22 11:27:05 - INFO - Trying to Execute: git push
+2026-06-22 11:27:10 - INFO - 成功执行: git push
+2026-06-22 11:27:10 - INFO - 更新完成并已推送到 GitHub
+2026-06-22 11:27:10 - INFO - Pushinto dynv6.com
+2026-06-22 11:41:50 - ERROR - Git 命令失败: git pull
+2026-06-22 11:41:50 - ERROR - stderr: ssh_dispatch_run_fatal: Connection to 20.205.243.166 port 22: Connection timed out
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+2026-06-22 11:45:01 - INFO - 前缀发生变化，准备更新
+2026-06-22 11:45:01 - INFO - Trying to Execute: git pull
+2026-06-22 11:45:05 - INFO - 成功执行: git pull
+2026-06-22 11:45:05 - INFO - 已写入新地址: 2408:822e:1ea4:2811:5054:ff:fefe:fb3f
+2026-06-22 11:45:05 - INFO - 已写入新地址至Custom.xaml: 2408:822e:1ea4:2811:5054:ff:fefe:fb3f
+2026-06-22 11:45:05 - INFO - Trying to Execute: git add .

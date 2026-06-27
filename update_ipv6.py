@@ -227,8 +227,8 @@ def main():
     log_info("更新完成并已推送到 GitHub")
     log_info("Pushinto dynv6.com")
 
-    if not pushintodynv6(current_addr):
-        log_error("DYNv6 Failed")
+    #if not pushintodynv6(current_addr):
+    #    log_error("DYNv6 Failed")
 
 
 if __name__ == '__main__':

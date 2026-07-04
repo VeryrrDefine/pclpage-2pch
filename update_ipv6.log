@@ -362,3 +362,9 @@ and the repository exists.
 2026-06-27 08:27:01 - ERROR - 获取当前 IPv6 地址失败，退出
 2026-06-27 08:30:01 - ERROR - 未找到有效的全局 IPv6 地址
 2026-06-27 08:30:01 - ERROR - 获取当前 IPv6 地址失败，退出
+2026-07-04 08:12:01 - INFO - 前缀发生变化，准备更新
+2026-07-04 08:12:01 - INFO - Trying to Execute: git pull
+2026-07-04 08:12:06 - INFO - 成功执行: git pull
+2026-07-04 08:12:06 - INFO - 已写入新地址: 2408:822e:1ea2:4851::ced
+2026-07-04 08:12:06 - INFO - 已写入新地址至Custom.xaml: 2408:822e:1ea2:4851::ced
+2026-07-04 08:12:06 - INFO - Trying to Execute: git add .

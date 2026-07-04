@@ -18,9 +18,9 @@ else:
 IPV6_FILE = 'ipv6'
 LOG_FILE = 'update_ipv6.log'
 GIT_COMMIT_MSG = 'Update Address'
-token = os.getenv("dynv6token")
-if (token is None):
-    sys.exit(1)
+#token = os.getenv("dynv6token")
+#if (token is None):
+#    sys.exit(1)
 # ===== 日志设置 =====
 logging.basicConfig(
     filename=os.path.join(WORK_DIR, LOG_FILE),
@@ -97,12 +97,12 @@ def write_current_ipv6(addr):
         return False
     return True
 
-def pushintodynv6(addr):
-    try:
-        g = requests.get(f'https://dynv6.com/api/update?hostname=veryrrdefine.dns.army&token={token}&ipv6={addr}')
-    except:
-        return False
-    return True
+#def pushintodynv6(addr):
+#    try:
+#        g = requests.get(f'https://dynv6.com/api/update?hostname=veryrrdefine.dns.army&token={token}&ipv6={addr}')
+#    except:
+#        return False
+#    return True
 
 def write_ipv6_information(addr):
     """将新地址写入PCL主页"""

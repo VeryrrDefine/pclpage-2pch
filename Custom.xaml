@@ -13,10 +13,6 @@
             Text="3. 点名批评地外鸡爱慕，搞个频繁换IP的内网穿透就算了，还不给IPv6地址" />
 
     </StackPanel>
-    <StackPanel Margin="20,100,23,15">
-        <local:MyHint Margin="10,0,23,15" Theme="Blue"
-            Text="由pfec_wlgyizhicat维护" />
-    </StackPanel>
 </local:MyCard>
 
 
